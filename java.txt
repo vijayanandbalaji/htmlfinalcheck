@@ -1,0 +1,1170 @@
+
+core java
+
+
+client/server technology - socket program
+	server socket -- act as server
+	socket -- act as client
+
+
+-------------------------------------------------------------------------------------------------
+C						           JAVA
+
+
+1.structural oriented					1. oops 
+
+2.#include<stdio.h>					2. no header files - packages 
+  header file 							import java.io.*;
+								import java.lang.Thread;
+								import java.net.*;
+							
+3.keywords -32 						3. keywords -49
+							no - sizeof(), extern,register,signed,unsigned.
+
+4.datatypes						4. primitive datatypes
+ primitive,user defined 		
+
+5.#define a 40 -- macros				5. no global declaration
+
+6.pointers						6. no pointers, only objects	
+
+				-----x----
+C++  and JAVA		
+
+1.object - instance of class
+	   contains mem ref,
+	   blue print,template
+
+2. class- methods, variables, constructors
+
+3.encapsulation - wrapping of data into single unit(data hiding)
+
+4.abstraction - hiding info from class
+
+5.Inheritance - accessing the properties of one class in another (code reusability)
+	--> single,multilevel,hybrid,hiearchial.
+
+No multiple interface we have Interface.
+
+6.polymorphism - one class takes many forms
+
+    ------> static / compile ---- methos/constructor/operator overloading.
+    ------> Dynamic/runtime ----- method overriding.
+ 
+    No operater overloading.--> in Java
+
+7. constructor --allocation of mem 
+                 ini the val at the time of object creation
+			
+		 can haev access specifier
+
+8. Destructor  --  deallocation of mem (~)
+  
+
+  java (no  destructor) -- 1. Automatic garbage collection (end of the program)
+			   2. system.gc()/Runtime.gc() where it automatically calls protected void finalize()
+							{
+								//contains the resources to be deallocated and invoked only once in lifecycle of program }
+
+9. String datatype - c++
+   string  -  class/literal
+
+
+
+
+
+java 
+
+	JDK -   exe file
+	
+	jdk  (1.0 to 8.0) oak,playground,kestrel,merlin,tiger,mustang,dolphin,spider
+
+	
+
+
+
+SOURCE CODE			JDK 				BYTE CODE		
+
+a.java   			javac				a.class ====> JAVA (interpretor)  (executed by JVM)
+
+
+JDK -java development kit , jrk extra tools to develop java program ----> compile
+
+ [    JVM - java virtual machine (read and execute byte code)		
+  
+      jit - just in time compiler ( convert byte code to native machine code ) ]
+
+
+JRE - provides supporting lib file  to exe java programs  ---- Run
+
+
+
+
+
+
+
+
+
+
+coding standard:
+~~~~~~~~~~~~~~~~
+
+1. Starting letter of each word should be caps.
+
+2.For method - form second word on words it should be caps
+
+3.variable - small
+
+4.const - caps
+
+5.identifiers - name given for class , variable, methods. start with (alps, 2 spl char _ ,$ can contain numbers).
+
+6.keywords - 49 [goto , const] are keywords of java , if we use ==> get compilation error . Instead of GOTO use continue and for const -> use final
+
+ three reserved words true,false for boolean , null for object , 
+
+7.Datatypes - primitive - >  
+				byte 		min			max
+
+		byte 		  1		-2
+
+		short		  2		-2pow15			2pow15 -1
+		
+		int	 	 4              -2pow31			2pow 31 -1
+		
+		long		 8 		-2pow63 		2pow63-1
+	
+		float		 4		
+		
+		double		8
+
+		char 		2(unsigned integer)   	0			65,535
+		
+		boolean		1		
+
+
+Fundamentals of java :
+
+
+
+
+LITERAL:- how to store the value
+	--> int literal 
+		* decimal literal	int a=30323;
+		* octal literal		int a=01;--07; 010,012,013,014,015
+		* hexadecimal literal	int a=0x13 or 0X13;
+	--> float literal
+		* a=3.14f or F
+	--> double literal
+		* a=3.14 or d or D;
+	--> short literal
+		* a=10;
+	--> long literal
+		* a=10 or 10l or 10L
+	--> byte literal 
+		* b=10;
+	--> boolean literal 
+		* b1=true or false;
+	--> charcter literal
+		* char a='a',5,'(char)70000, '\u0001' // unicode representation
+	--> string literal
+		* s="hello"
+
+
+Variables:
+
+ 2 type:
+	* instance or class variable  Int , short , byte ,long   .  float , double = 0.0 . boolean=false. obj = null. char = /u0000
+	* local variable 
+
+
+
+visibilit 					Default 					public					private				protected	
+	
+
+same class same package				yes						yes					yes				yes
+
+diff class same package(non sub class)		yes						yes					no				no
+
+diff class diff package(sub class)		no 						yes 					no				yes
+
+
+
+
+operators
+
+
+Arithmetic Operator: +,-,*,/
+
+modulus operator   : %
+
+relational operator : > < >= <= 
+
+equality & inequality : == != 
+
+assignment operator   : =
+
+compound assign opt   : += -= *= /=
+
+incr decr optr	      : ++  -- 
+
+bitwise optr	       : &-AND  |-OR  ^-EXOR ~-ones complement >> <<
+
+shortcircuit log optr  : &&  ||
+
+new optr	       : obj creating	
+
+dor optr               : to access methods and variables
+
+instance of optr       :
+
+ternery optr		: ? :
+
+
+TYPE CONVERSION
+
+	* implicit conversion - lower to higher datatype
+	*explicit  conversion  - higer to lower
+
+
+
+
+Access specifiers or acces modifiers:
+
+4 - public , private ,protected , default
+
+
+
+Execution control statements in java:
+	* conditional statement - if,else , switch and ternary optr.
+	*
+
+looping:
+	for , while, do while
+flow breaking statement:
+	break- stops entire iteration ,  labeled break and unlabeled break
+	continue-- stops current ireation 
+	return--transfer control back to the calling program
+	
+        
+ARRAYS:
+
+
+int a[]={1,2,3,4};
+
+//int a[4]={1,2,3,4};
+
+int a[0];
+	a[0]=1;
+	a[1]=2;
+	a[2]=3;
+
+int[] a=new int[4];
+
+int a[]=new int[4];
+
+a[0]=1;
+
+int a[]=new int[]{1,2,3,4}; // anonmyous array
+
+//int a[]=new int[4]{1,2,3,4};
+
+int a[]=new int[-4];
+
+
+int a[]={1,2,3,4};
+for(int i=0;i<a.length;i++)
+	sop(a[i]);
+
+for(int a1:a)
+	sop(a1)    // for jdk1.5 only for printing
+
+1. variable should be declared only inside for loop of same datatype
+
+
+double d[]={1.2,3.4,5.6};
+
+for(double d1:d)
+	sop(d1)
+
+
+Two Dimension
+
+int a[][]={{1,2}{3,4}};
+//int a[2][2]={{1,2}{3,4}};
+
+
+int a[][]=new int[5][5];
+iny[][] a=new int[5][5];
+int[] a[]=new int[5][5];
+
+
+int a[][]=new int[5][];   //arrays of array
+ a[0]=new int[2];
+
+int a[][]={{1,2},{3,4}};
+for(int a1[]:a)
+	sop(a1[0]);
+	
+for(int a2:a1)
+	sop(a2); // 1,2,3,4
+
+
+
+
+STRINGS:
+	* string is immutable class . The value can't able to change.
+	
+	==> Constructor
+		String()
+		String(String s);
+		String(byte[] b,int start,int end);
+		String(char[] c,int start,int end);
+		String(byte[] b);
+		String(char[] c);
+
+		char c[]={'j','a','v','a'};
+		String s=new String(c);
+		sop(s);
+
+
+toString
+
+==> String toString()
+
+byte[] getBytes() ==> convert string to byte array
+
+char[] toCharArray() ==>converts String to char array
+
+boolean startsWith(String)
+boolean endWith(String)
+int length()
+
+
+
+boolean equals(String S) ==> checks the equality of the content by considering the case.
+boolean equalsIgnoreCase(String s)  
+==(equals versus) ==>check the equality of the object reference.
+
+
+
+Example:
+
+		String a=new String("hello");
+		String b=new String("hello");
+		
+		System.out.println(a.equals(b));
+		System.out.println(a.equalsIgnoreCase(b));
+		System.out.println(a==b);
+		
+		String s4=a;
+		System.out.println(s4==a);
+		
+		String s="hello";
+		String ss="hello";
+		
+		
+		System.out.println(s.equals(ss));
+		
+		System.out.println(s==ss);
+		
+
+
+String substring(int start)
+String substring(int start,int end);
+
+Example:
+	String a="hello world";
+	System.out.println(a.substring(6));
+		
+	System.out.println(a.substring(2, 7));
+
+
+
+
+
+		String a="hello";
+		String b="hello";
+		String c="hemlo";
+		String d="flag";
+		
+		System.out.println(a.compareTo(b)); //0
+		System.out.println(a.compareTo(c)); //-1
+		System.out.println(a.compareTo(d)); //2
+
+
+indexOf ---> return 1st occurance of char in given string
+lastIndexOf ---> return last occurance of char in given string
+
+EXAMPLE:
+		String a="hello how are you hello how care you hello how ware you";
+
+		System.out.println(a.indexOf('a'));
+		System.out.println(a.lastIndexOf('o')); 
+
+		System.out.println(a.indexOf("are"));
+		System.out.println(a.lastIndexOf("are"));
+
+
+
+String toUppercase()
+String to Lowercase()
+String trim()
+Sting concat(String s)
+String replace(char ori,char replace)
+
+EXAMPLE:
+		String s=new String("  hello world  ");
+		
+		System.out.println(s.length());
+		System.out.println(s.trim().length());
+		System.out.println(s.length());
+		
+		String a=new String("hello");
+		System.out.println(a.concat(" world"));
+	
+		String b="hello";
+		System.out.println(b.replace('e', 'i'));
+	
+
+
+String[] split(String delimiter)
+
+EXAMPLE:String a="one-two-three";
+		String b[]=a.split("-");
+		for(String c:b)
+			System.out.println(c);
+		
+		
+		String d="one.two.three";
+		String e[]=d.split("\\.");
+		for(String f:e)
+			System.out.println(f);
+		
+		String d1="one*two*three";
+		String e1[]=d1.split("\\*");
+		for(String f:e1)
+			System.out.println(f);
+		
+		String s="No concession,no concillation,no give and take money";
+		String te="concession|concillation|(give and take)";
+		String ss[]=s.split(te);
+		for(String s1:ss)
+			System.out.println(s1);
+
+
+static String format(String format,Stsring value)
+EXAMPLE:
+	System.out.println(String.format("|%15s|", "kasjf"));
+	System.out.println(String.format("|%5s|", 4));
+	System.out.println(String.format("|%5.1f|",123.456));
+
+
+boolean regionMatches(boolean ignorecase,int start,String value,int targetstart,int howmany);
+
+EXAMPLE:
+	String a="ABC Windows test";
+	System.out.println(a.regionMatches(true, 4 ,"windows" ,0 , 7));
+
+
+Wrapper class:
+	The class that supports primitive datatypes to perform operation on that datatype.
+	All wrapper classes are also immutable.
+
+
+	int -- Integer	
+	byte -- Byte
+	char -- character
+	float -- Float
+	double -- Double
+	boolean	-- Boolean	
+	short -- Short
+	long -- Long
+
+
+			OBJECT -- Character,Boolean
+			   |	
+			   |
+			Number -- Integer,Byte,Float,Double,Short,Long
+
+
+	Integer: constructor  1. Integer(int a)
+					Integer i=new Integer(42);
+					sop(i);
+			      2. Integer(String s)
+					Integer i2=new Integer("44");
+					sop(?i2);
+
+			      3. i3=new Integer("abc"); throws number format exception
+		
+		Methods		1. public static int parseInt(String s)
+				2. public static int parseInt(String s,int radix)
+				3. int intValue()
+				4. static Integer valueOf(String s)
+
+				parse method used to convert string to datatype
+				int value method converts int wrapper class to datatype
+				valueOf method used to String to a wrapper class
+
+
+
+	Example:
+	
+		String a="42";
+		 int i=Integer.parseInt(a);
+		 System.out.println(a);
+		 
+		 int j=Integer.parseInt(a, 5);
+		 System.out.println(j);
+
+
+	Byte: constructor 1. Byte(byte c)
+			  2. Byte(String s)
+
+	Boolean: contructor 1. Boolean b1=new Boolean(true);
+			    2. Boolean b2=new Boolean(false);
+
+
+
+	Double : double which takes double as a argument
+		   ""    ""    ""    String  ""  ""
+
+	character: It take only character as a argument
+
+			method : static boolean isletter(char ch);
+				 static boolean isdigit (char ch);
+				 static boolean isletter or digit(char ch);
+				 static boolean isuppercase (char ch)
+				    " 	  "      "  iswhitespace(char ch)
+
+Autoboxing , unboxing
+
+*Automatic conversion of datatype to wrapper class
+* Available only in jdk1.5.
+
+
+
+
+----------------------------------------------------------------------------------------------------
+with autoboxing									Without autoboxing
+----------------------------------------------------------------------------------------------------
+Integer i;									Integer i;
+int j;										int j;
+i=5;										i=new Integer(5);
+j=10;										j=10;
+j=i;										j=i.intValue();
+
+
+Scanner :-
+	used to get the input from the user based on type
+	Scanner sr=new Scanner(System.in);
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+This key word
+
+	This refers to the cureent class instance variable.use when instance variable and parameter variables are same.
+
+This Constructor
+
+	This is used to invoke diff constructor of same class and always it should be present in the first line	
+
+
+
+
+
+POLYMORPHISM
+
+	One class takes many forms
+
+		Static or compile time polymorphism
+		
+		Method overloading : Same method name but diff number and order and datatype  of the argument which present in the same class.
+
+
+var args: passing variable number of arguments to a method and available from jdk i.5 version  In combination of normal argument and variable argument , the variable argument should be last argument and method can have only one variable argument
+
+
+
+--------------------x---------------------------
+
+
+non access specifiers : it has its own restrictions 
+
+static -  It is non access specifier.
+	  when a class is declared to be a static no need to create an object.
+	  only inner class can be static outer should not be static.
+    	  when a method is declared to be static.If it is present inn same class it is called by method name , diff class means called by className.methodName .
+       	  If a variable is declared as static it will be initialized only once and invoked as variable name in the same class, className.variable name if it is diff class.
+	  static method can access static content.  
+
+
+
+	public class System{
+		static PrintStream out;
+		static InputStream in;
+	}
+
+	static import :
+		Available from jdk 1.5 where we can call static methods and static variables directly without using class name.  
+
+
+
+
+-------------------x---------------------------------------
+
+Inheritance
+	* Accessing the property of one class in another class
+	* Code reusability
+
+Super()
+	*used to access base class constructor , base class methods, base class variable.
+	* only in the case of base class constructor super should be present in the 1st line.
+	
+
+How constructors are invoked in inheritance:
+
+	In inheritance the constructor always invoked a top down approach.
+	
+	First its go to the related class constructor and  check we used or super.otherwise its try to invoke only the default constructor of the base class.
+	
+-----------------------------
+IS- A relationship
+
+
+	whereever inheritance comes, that type of relationship is a ship.                              
+
+HAS - A relationship
+	
+
+-----
+
+Method Overriding
+	Same method name , same return type of method , same number ,order,and datatype of the argument present in different class and the class should be inherited.
+
+
+
+	In order to have effective method overriding we have a dynamic method dispatch ,where we create an object for a base class but we stored the reference of derived class.
+
+	At compilation the compiler things object is created for base class only at the time of execution it knows the object contains the reference of derived class in this way we achieve run time polymorphism
+	
+
+
+final keyword:
+	*It is a non access specifier
+	*If a class is declared as final it cannot be inherited
+	*If a method is declared as final	
+
+
+
+
+
+
+---------------------x----------------------
+
+Object class
+~~~~~~~~~~~~
+
+	It is the super class of all the classes.
+	
+	Constructor:
+		object()
+	Methods:
+		String toString();
+
+		boolean equlas(object o)
+		
+		int hashcode() - 
+
+		protected void finalize()
+
+			final void wait()
+			final void wait(long milllisecond)
+			final void notify()
+			final void notifyAll()
+
+
+Abstract keyword:
+
+	1. non access specifier
+	
+	2. when a class is declared to be abstract it cannot be instantiated.
+	
+	3. when a method is declared to be  a abstract it does not contain definition it ends with(;)
+	
+	4.variables can't be abstract
+	
+	5.A class sholud be declared as abstract if it contains a abstract method.But bot neccessarily all the abstract class should have abstract method
+
+	6. The abstract can also some normal methods.
+
+	7.The abstract class can also be inherited, at that time we have to compulsorly give the definition of the abstract method in the inherited class or define the class itself to be abstract.
+
+	8.Abstract class contain a default constructor.
+
+
+
+Interface:
+
+	Instead of multiple inheritance we use interface.
+	
+	It is syntatically similar to classes which contains method declarations and variable declaration and initialisation.
+	
+	syntax:
+		Access specifier followed by interface name{method and variable declarations }
+
+	By default all interfaces are abstract so we can't create object for interface
+	
+	By default all interface methods are public and abstract.
+
+	By default all interface variables are public,static and final so interface variables are accessed using interface name.variable name
+
+	=> interface are used using implements key word.if a class implements an interface we have to compulsorly provide the definition of interface methods with public access specifiers or make the class itself to be abstract.
+
+	The implemented class can also contains some normal methods . The interfaces can also be inherited . In java we have 
+	
+	* One class Extends one class
+	* one class implements many interface
+	* one interface extends many interface 
+	* An interface without any methods and variables - Marker interface eg: serialisable , clonable,remote etc.
+
+
+
+											Exception Handling
+
+object->throwable->Exception.
+
+Exception--->runtime excwption,sql exceptio,IOExceptio,classNotfoundException.
+
+Runtime--->Errror,nullpointer,Arithmetic exception.
+
+checked exception -> sub classes of exception,it will insists the programmer to surround the code using try catch or throws otherwise the compiler will not compile the program.
+
+unchecked exception -> sub classes of run time exception the compiler will not insists the programmer to surround the code using try catch or throws.
+
+
+	Arithmetic exception :
+			1/0 - exception
+			a[4]=10; -array index out of bound
+			array store exception - a[3]="hello";
+			negative array size exception  - int []=new a[-4]
+
+
+			A a=new A()
+			B b=new B()
+			a=b or b=a -> class cast exception
+			
+			null pointer exception ->       A a=new A();
+						 	a.add()
+							a=null;
+							a.add()
+	
+			Number format exception:
+					int a=Integer.parseInt("abc");		
+		
+			Illegal monitor state exception.
+			Illegal thread state exception.
+
+	keywords to handel exception :
+			try:
+				program to be monitored for exception is put inside try block.
+			catch:
+				used to caught the exception.
+			finaly:
+				It is a optional statement used to close the resources, if it is used wheater exception occurs or not it will be executed after the try block mainly used in file programming , db programming, socket programming.
+			
+
+			throw:
+				used to manually throw an exception
+				syntax: throw new ArithmeticException
+			throws:
+				used to throw the exception and executes asusal.It can be used only in methods.
+
+
+user define exception  and custom exception.
+	
+
+
+
+---x----
+
+java.util.*;
+
+utility package or collection framwork
+
+used to store a collection of objects
+
+
+
+	collection - it is a core interface to store a collection of objects
+
+			provide with static algorithm to support util package
+			
+			* List - ordered and duplicats allowed - Array List , Linked List , vector 
+			* set - unordered and no duplicates - Hashset , Linked HashSet  
+							    - Sorted set - tree set
+
+
+ArrayList Class
+
+	*It is a dynamic array used to increase and decrese its size at runtime.
+	*It is used for faster selection and slower in insertion and deletion.
+	*Default capacity is 10.
+
+	constructors - 
+			default constructor
+			constructor which takes int capacity
+			constructor which takes collection C
+	Methods-
+			void add(Object obj) - to add single object
+			void add(int index,Object obj) 
+			void addAll(Collection c)
+			void addAll(int index,Collection c)
+			Object get(int index)
+			void remove(int index)
+			Object set(int index,Object obj)
+			int indexOf(Object obj)
+			int lastIndexOf(Object obj)
+			boolean contains(Object obj)
+			int size()
+			boolean isEmpty()
+
+
+	List<Employee> l=new ArrayList<Employee>(); //generics from jdk1.5	
+	List<Employee> l=new ArrayList<>(); // from jdk1.7
+
+
+
+			Linked List
+				Similar to arrayList 
+				It is used for faster insertion and slower selection because it implements list,dequeue.
+				
+			Vector:
+				similar to arrayList but it is synchornised or thread safe.
+				It is a legacy class.
+				default capacity is 10;
+				
+
+				Constructor:
+						default,vector(Int Capacity),vector(Int Capacity,int increament),vector(collection c)
+
+
+Hashset
+	constructor - default,int capacity,int capacity,hashset collection c
+
+Linked HASHSET
+	prints the elements in the order which we have inserted			 
+		
+
+Treeset class:
+	used to sort the emts in alphebetical or ascending order
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+													MAP Interface 
+=>	It is used to store a collection
+=>	Map is unordered
+=>	used to access the key and value the separately
+	
+	void put(Object key,Object value)
+	
+	void putAll(Map m)
+
+	Object get(Object key)
+
+	void remove(Object key)
+
+	boolean containsKry(Object key)
+
+	boolean containsValue(Object value)
+
+	Set entrySet() -- converts both key and values to set interface
+
+	Set KeySet() -- converts only key to set interface
+					
+
+		sortedmap-------------------Map
+		   |			    |
+	       Tree Map			Abstract Mapp
+					    |
+					    |
+					hash Map
+				            |
+					Linked Hash Map
+
+
+	Hasp Map:
+		*contains unique key value pair and prints in random order.
+		*4 constructor 
+		* default capacity :16
+	
+
+							Linked Hash Map
+	*contains key value pair and print in the order which we have inserted
+			
+			
+	Tree Map
+				
+	used to sort the elemt based on the keys
+		
+		
+	Hash Table						
+
+	similar to hash map but it is synchornised or thread safe
+
+
+	Properties class
+
+		It is a sub class of hash table contains unique key value pair both should be in the form of string(prints randomly)
+		
+		-----x-------
+
+							Date Class
+
+	*used to print date and time
+
+	2 constructor - default(current date and time) , date(long millisecond) prints date and time from jan1st 1970
+
+
+	Methods - int compare(date d) , boolean before(date d), boolean after(date d), void settime(millisecond)
+
+
+						Calender class
+	* It is an abstract class uesd to extract the useful info from date and time component.
+	* constructor	(default)
+	* methods	public static calender getInstance	
+			public int get(int field)
+			public int add(int field,int value)
+			public int set(int field,int value)
+			public boolean before(calender c)
+			public boolean after(calender c)
+			public int get actualMaximum(int field)
+			public int get actualMinimum(int field)
+			public int get maximum(int field)
+			public int get minimum(int field)
+			final Date getTime() ->converts calender to date
+			final void setTime(Date d)  -> date to calender
+			
+			gregorianCalender - >concrete implementation of calender class used to extract info from date and component
+				constructor - default(current date and time)
+						gregorianCalender(int date,int month,int year)
+						gregorianCalender(int year,int date,int month,int date,int time,int sec)
+						
+						boolean isleapyear(int year)
+				constants - 	public static final int YEAR
+						public static final int MONTH
+						public static final int DATE
+						
+						public static final int HOUR
+						public static final int MINUTE
+						public static final int SECOND
+						public static final int MILLISECOND
+						public static final int ERA
+						public static final int AM or PM
+						public static final int (weeks)
+						public static final int (months)
+						public static final int DAY_OF_MONTH
+						public static final int DAY_OF_WEEK
+						public static final int DAY_OF_WEEK_IN_MONTH
+						
+						
+
+SIMPLE DATE CALENDAR CLASS
+
+java.text.*;
+
+	Used for formatting and parsing
+		                  |	
+				string to date										
+
+	constructor - > default  and constructor which takes string pattern
+					
+	G->reprents the era.
+	y->represents year in number.
+	Y->represents the week of year.
+	M->month in year.
+	W->week in month.
+	D->Day in year.
+	d->day in month.
+	E->Day name in week.
+	a-> am or pm.
+	H->hour in day 0 to 23
+	k->hour in day 1 to 24
+	K->hour in am or pm 0 to 11
+	h->hour in am or pm 1 to 12
+	m->minutes
+	s-> seconds
+	S->milliseconds
+
+	methods :
+		String format(Date d)
+		
+
+
+
+
+												java.io.*;
+
+
+
+	Two classes:
+			file class (access info about existing file)	
+			Stream class(perform optr on file)	----> byte stream(read and write bytes)--->input stream(read in bytes),output stream(write in bytes)
+							   	----> character stream(read and write in char) ----> abstract reader(read in char)->file reader, abstract writer(write in char)->file Writer.
+
+
+
+
+	int read--> char array c --> read array of c and return the number of byte read
+				
+
+	File reader extends reader - > used to read the data from file in the form of characters.
+
+	if the file does not exists it throws file not found exception
+
+	constructor:
+		file reader(string filepath)
+		FILE reader(string directorypath,String filename)
+		file reader(file f)
+		
+
+
+		Writer class
+	
+Abstract class used to write in form of characters
+	method-> 	void write(int b)
+			void write(char[] c)
+			void write(char[] c,int offset,int numcast);
+			void close();
+			void flush();
+		File writer-> extends writer ->used to write in a file in the form of characters.
+			constructor ->  not exits create a new file.if exists it overwite the contents.
+				 	1. file writer(String filepath)
+					2. file writer(Sting filepath,boolean append)
+		
+
+
+										String buffer	
+	
+java.lang.*;
+
+	It is a mutable class with variable number of characters.
+	It is synchornised or thread safe.
+	we cant override equals method in string buffer.
+	
+	constructor : -  default capacity-16,Stringbuffer(int capacity)
+				
+
+	 	method -  	int length()
+				void setCharAt(int loc,char c)
+				void setLength(int len)
+				char charAt(int loc)	
+
+
+								String Builder:
+
+	It gives a better performance than string buffer .It is not synchornized
+	
+	
+
+
+Threading:
+	Used to run multiple lines of code in a single program simultaneously using thread class.
+	Syntax:
+		public class thread extends object implements Runnable{}
+
+	Constructors:	
+		Default,thread(String ThreadName) ,thread(runnable r,String nathread(runnable r),thread(threadgroup tg,String threadname), thread(threadgroup tg, runnable r),Thread(threadgroup tg, runnable r, String threadname) 
+			
+	Constants:
+		Threadpriority.MIN=1;	
+		Threadpriority.MAX=10;
+		Threadpriority.NORM=5;
+
+	methods:
+		pv start(),psv sleep(long millisecond?);
+	
+	Two types:
+
+	1.main thread.->default -> It will be executed first and blocked to invoke the child thread.
+	2.child thread -> blocking main thread and then it will be executed.we create n number of child thread.
+
+Life cycle of child thread:
+			
+	1.Begin
+	2.Runnable
+	3.Running
+	4.Blocked
+	5.Dead
+
+Creation of child thread:
+	2 ways:
+	* By implementing runnable interface--It acts like a child thread,to create the thread we use any one of 7 constructor. It contains one method, pv run()->which contains the optr or procesing of the child thread
+  	
+	*By extending Thread Class 
+
+
+		implements is effective
+
+	Synchronisation:
+		when multiple thread accesss a single resource , the thread has to utilise the resource completely or fullflutched is called synchronisation
+		It can be achieved using synchronised key word
+		
+		It is an non access specifier it can be applied only to methods or synchornised block of objects
+
+		synchronised(object){}
+
+
+		Anotations 
+				It is available from jdk 1.5 .It is like meta data means ur free to add your code and also apply them to variables parameters,methods, constructors and class.It is used instead of xml file.
+
+				1.. Anotation Type - creation of anotations public @interface anonataionName{}
+
+				Rule : 
+					method declaration should not throw any exceptions.
+					method declaration should not contain any parameter.
+					method    ""       should have a return type either(String, object).
+
+				2. Anotation - applying created anootation in java program(either class or method level)
+
+		Two type of anotations:
+			1.Simple -> present in java.lang.* package and it can be applied only on the java programs.
+				* @override : 	Ensures that the anotated method is used to override method in the super class.
+				* @depricated :	 This type of anotations warns you when ur using deprecated element of the program.
+				* @SuppressWarnings : compiler will the warning message in anotated method.
+			
+			2.Meta -> anotation about anotaion and used at the time of creating anotation present in java.lang.anotaion.*;
+				* @target : Specifies where the anontation should be applied the java program.
+						@target(ElementType.METHOD)
+						@target(ElementTypeE.CONSTRUCTOR)
+						@target(ElementTypeE.VARIABLE)	
+						@target(ElementTypeE.TYPE)
+				* @retention : specifies where and how lomg annotations with its type are to retained 
+						@retention(RetentionPolicy.SOURCE)
+						@retention(RetentionPolicy.CLASS)
+						@retention(RetentionPolicy.RUNTIME)
+				* @documented : java doc is used to document only methods varibale and condtructor of a class in the html file
+							(javadoc Sample2.java -d Doc)
+
+						It is used to document the annonations also using "javadoc tool"
+
+
+
+Testing
+	
+	JUnit 
+		It is a unit testing open Source framework for java programming language used to test the individual classes.
+		Configure the JUnit jar file inside the project
+		org.JUnit.assertclass provides set of assertion methods useful for writing test.
+		1. void assertEquals(boolean expected,boolean actual)
+		2. void asserFalse(boolean condition)
+		3. void assertNotNull(Object obj)
+		4. void asserNull(Object obj)
+		5. void assertTrue(boolean condition)
+
+	JUnit annotations
+		1.@test : This is a test method to run
+		2.@before: Run before @test.
+		3.@after : Run After @test.
+		4.@beforeClass :Run once before any of the test method.
+		5.@AfterClass : Run once after any of the test method.
+	

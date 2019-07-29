@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<title>menu list</title>
+
+</head>
+<script src="validate.js">
+	
+</script>
+
+<body>
+
+	<div class="header">
+
+		truYum
+
+		 <img src="images/light.png"> 
+
+		<a style="padding-left: 1200px; color: white;" href="">Menu</a> 
+
+	</div>
+
+
+
+	<p>Edit Menu Item</p>
+
+
+
+	<form name="myform" id="myform" action="practise.html">
+		<table>
+			<tr>
+				<td colspan="4"><b>Name</b></td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="text" id="name" name="name"
+					value="name" style="width: 800px;"></td>
+			</tr>
+			<tr>
+				<td><b>Price (Rs.)</b></td>
+				<td><b>Active</b></td>
+				<td><b>Date of Launch</b></td>
+				<td><b>Category</b></td>
+			</tr>
+			<tr>
+				<td><input type="text" id="price" value="price" name="price">
+				</td>
+				<td><input type="radio" name="active" id="Yes" value="Yes">Yes<input
+					type="radio" name="active" id="No" value="No">No</td>
+				<td><input type="text" id="dol" value="dol" name="dol">
+				</td>
+				<td><select id="category">
+						<option value="Starters">Starters</option>
+						<option value="Main Course">Main course</option>
+						<option value="Dessert">Desserts</option>
+						<option value="Drinks">Drinks</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="delivery"> <b>Free
+						Delivey</b></td>
+			</tr>
+			<tr>
+				<td>
+					<button type="button" class="button button1"
+						onclick="return validation()">Save</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+
+	<script src="js/editjs.js"></script>
+	<footer> Copyright&copy; 2019 </footer>
+</body>
+</html>
