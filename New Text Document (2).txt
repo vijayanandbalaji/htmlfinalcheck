@@ -1,0 +1,3 @@
+172.18.2.18
+
+above is URL of Internal GitLab , and can eb accessed from VMs only
